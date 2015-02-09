@@ -1,0 +1,41 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #005544;
+	background-color: #FFDFD4;
+}
+
+.main-div {
+	text-align: center;
+	max-width: 100%;
+}
+
+#instructions {
+	font-style: italic;
+}
+
+.guess-box {
+	margin: auto;
+	max-width: 40%;
+	border: 3px dashed orange;
+	padding: 20px 0;
+}
+
+input {
+	font-size: 1em;
+}
+
+button {
+	font-size: 1em;
+	color: #005544;
+	background-color: #C0FDCD;
+}
+
+#other-buttons {
+	padding: 20px;
+}
+
+footer {
+	text-align: center;
+	font-size: 0.8em;
+	font-weight: 200;
+}
