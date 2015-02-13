@@ -48,12 +48,12 @@ $(document).ready(function() {
 			if (!validate()) {
 				alert("You didn't enter a valid number. Try again.");
 			} else if (!repeatNumCheck(playerGuess)) {
-				count++;
 				if (count < maxCount) {
 					checkIfMatch(playerGuess,mysteryNum);
+					count++;
 				}
 				else {
-					$('h3').replaceWith("<h3>Sorry, you lose. Press 'Play Again' to play again.</h3>");
+					$('h3').replaceWith("<h3>Sorry, you lose. The number was "+mysteryNum+". Press 'Play Again' to play again.</h3>");
 				}
 			}
 		}
