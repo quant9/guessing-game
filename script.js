@@ -64,6 +64,8 @@ $(document).ready(function() {
 		createMysteryNum();
 		count = 0;
 		guesses = [];
+		$('h3').replaceWith("<h3></h3>");
+		$('#guess').val("");
 	});
 
 	$('#hint').click(function() {
