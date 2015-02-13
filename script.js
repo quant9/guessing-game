@@ -46,9 +46,9 @@ $(document).ready(function() {
 
 	$('#submit').click(function() {
 		if (count !== -1 && validate() && !repeatNumCheck(playerGuess)) {
+			count++;
 			if (count < maxCount) {
 				checkIfMatch(playerGuess,mysteryNum);
-				count++;
 			}
 			else {
 				$('h3').replaceWith("<h3>Sorry, you lose. The number was "+mysteryNum+". Press 'Play Again' to play again.</h3>");
