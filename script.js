@@ -33,6 +33,7 @@ $(document).ready(function() {
 	createMysteryNum();
 
 	function checkIfMatch(a,b) {
+		count++;
 		if (a === b) {
 			count = -1;
 			$('h3').replaceWith("<h3>YOU WIN! Click 'Play Again' to play again.</h3>");
@@ -50,7 +51,6 @@ $(document).ready(function() {
 			} else if (!repeatNumCheck(playerGuess)) {
 				if (count < maxCount) {
 					checkIfMatch(playerGuess,mysteryNum);
-					count++;
 				}
 				else {
 					$('h3').replaceWith("<h3>Sorry, you lose. The number was "+mysteryNum+". Press 'Play Again' to play again.</h3>");
