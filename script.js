@@ -34,6 +34,7 @@ $(document).ready(function() {
 
 	function checkIfMatch(a,b) {
 		if (a === b) {
+			count = -1;
 			$('h3').replaceWith("<h3>YOU WIN! Click 'Play Again' to play again.</h3>");
 		} else {
 			highOrLow = a > b ? "LOWER" : "HIGHER";
@@ -43,15 +44,17 @@ $(document).ready(function() {
 	}
 
 	$('#submit').click(function() {
-		if (!validate()) {
-			alert("You didn't enter a valid number. Try again.");
-		} else if (!repeatNumCheck(playerGuess)) {
-			count++;
-			if (count < maxCount) {
-				checkIfMatch(playerGuess,mysteryNum);
-			}
-			else {
-				$('h3').replaceWith("<h3>Sorry, you lose. Press 'Play Again' to play again.</h3>");
+		if (count !== -1) {
+			if (!validate()) {
+				alert("You didn't enter a valid number. Try again.");
+			} else if (!repeatNumCheck(playerGuess)) {
+				count++;
+				if (count < maxCount) {
+					checkIfMatch(playerGuess,mysteryNum);
+				}
+				else {
+					$('h3').replaceWith("<h3>Sorry, you lose. Press 'Play Again' to play again.</h3>");
+				}
 			}
 		}
 	});
