@@ -9,15 +9,19 @@
 		<h2>Guess the Number!</h2>
 		<p id="instructions">please input a number from 1 through 100.</p>
 		<div class="guess-box">
-			<input type="text" placeholder="playerGuess" value="Your guess here">
-			<button type="button" class="button-default">Submit Guess</button>
+			<input id="guess" type="text" placeholder="Your guess here" onkeydown="if (event.keyCode === 13) document.getElementById('submit').click()">
+
+			<button type="button" class="button-default" id="submit">Submit Guess</button>
 		</div>
-		<h3 id="result"><!--I'm leaving this for the JS portion--></h3>
+		<h3><!--I'm leaving this for the JS portion--></h3>
 		<div id="other-buttons">
-				<button type="button" class="button-default">Give me a Hint</button>
-				<button type="button" class="button-default">Play Again</button>
+				<button type="button" class="button-default" id='hint'>Give me a "Hint"</button>
+				<button type="button" class="button-default" id='again'>Play Again</button>
 		</div>
+		<div id="answer"><!-- here's where the hint goes --></div>
 	</div>
 	<footer>Site design by Kevin Zhu, Fullstack Academy 2015 student</footer>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>

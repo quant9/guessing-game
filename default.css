@@ -13,6 +13,10 @@ body {
 	font-style: italic;
 }
 
+h3 {
+	height: 2em;
+}
+
 .guess-box {
 	margin: auto;
 	max-width: 40%;
@@ -32,6 +36,14 @@ button {
 
 #other-buttons {
 	padding: 20px;
+}
+
+#answer {
+	height: 2em;
+}
+
+span {
+	font-size: 0.8em;
 }
 
 footer {
