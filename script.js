@@ -11,6 +11,7 @@ function validate() {
 	if (Math.round(playerGuess) === playerGuess && playerGuess >= 1 && playerGuess <= 100) {
 		return true;
 	} else {
+		alert("You didn't enter a valid number. Try again.");
 		return false;
 	}
 }
@@ -33,7 +34,6 @@ $(document).ready(function() {
 	createMysteryNum();
 
 	function checkIfMatch(a,b) {
-		count++;
 		if (a === b) {
 			count = -1;
 			$('h3').replaceWith("<h3>YOU WIN! Click 'Play Again' to play again.</h3>");
@@ -45,20 +45,16 @@ $(document).ready(function() {
 	}
 
 	$('#submit').click(function() {
-		if (count !== -1) {
-			if (!validate()) {
-				alert("You didn't enter a valid number. Try again.");
-			} else if (!repeatNumCheck(playerGuess)) {
-				if (count < maxCount) {
-					checkIfMatch(playerGuess,mysteryNum);
-				}
-				else {
-					$('h3').replaceWith("<h3>Sorry, you lose. The number was "+mysteryNum+". Press 'Play Again' to play again.</h3>");
-				}
+		if (count !== -1 && validate() && !repeatNumCheck(playerGuess)) {
+			if (count < maxCount) {
+				checkIfMatch(playerGuess,mysteryNum);
+				count++;
+			}
+			else {
+				$('h3').replaceWith("<h3>Sorry, you lose. The number was "+mysteryNum+". Press 'Play Again' to play again.</h3>");
 			}
 		}
 	});
-
 
 	$('#again').click(function() {
 		createMysteryNum();
@@ -72,5 +68,4 @@ $(document).ready(function() {
 		$('#answer').replaceWith("<div id='answer'><span>pssst, the number is "+mysteryNum+"</span></div>");
 		$('span').fadeOut(1200);
 	});
-
 });
