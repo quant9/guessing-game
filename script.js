@@ -46,8 +46,8 @@ $(document).ready(function() {
 
 	$('#submit').click(function() {
 		if (count !== -1 && validate() && !repeatNumCheck(playerGuess)) {
-			count++;
 			if (count < maxCount) {
+				count++;
 				checkIfMatch(playerGuess,mysteryNum);
 			}
 			else {
